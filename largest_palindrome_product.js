@@ -6,19 +6,17 @@
  *                   the palindromeNumber and the palindromeNumber itself.
  */
 module.exports = function(digits){
-  var factor_0 = 0;
-  var factor_1 = 0;
+  var factor_0 = Number('9'.repeat(digits));
+  var factor_1 = Number('9'.repeat(digits));
   var palindromeNumber = 0;
 
   // do your work here
 function isPalindrome(theNumber){
   theNumber = String(theNumber);
   var isPal= true ;
-  var numLength = theNumber.length;
-  var midpoint = Math.ceil(numLength/2);
-  var isEven = (numLength % 2 === 0);
+  var midpoint = Math.ceil(theNumber.length/2);
   var s = 0;
-  for (var i = numLength - 1; i >= midpoint; i--) {
+  for (var i = theNumber.length - 1; i >= midpoint; i--) {
     if(theNumber.charAt(i) != theNumber.charAt(s)) {
       isPal = false;
     }
@@ -26,6 +24,10 @@ function isPalindrome(theNumber){
   }
   return isPal;
 }
+
+
+
+
 
 
   return {
