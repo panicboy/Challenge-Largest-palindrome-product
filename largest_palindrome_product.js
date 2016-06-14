@@ -11,7 +11,21 @@ module.exports = function(digits){
   var palindromeNumber = 0;
 
   // do your work here
-
+function isPalindrome(theNumber){
+  theNumber = String(theNumber);
+  var isPal= true ;
+  var numLength = theNumber.length;
+  var midpoint = Math.ceil(numLength/2);
+  var isEven = (numLength % 2 === 0);
+  var s = 0;
+  for (var i = numLength - 1; i >= midpoint; i--) {
+    if(theNumber.charAt(i) != theNumber.charAt(s)) {
+      isPal = false;
+    }
+    s++;
+  }
+  return isPal;
+}
 
 
   return {
